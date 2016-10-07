@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+
+    <title>Panza | La mejor comida de la ciudad</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/panza.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Playfair+Display" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="by-square not-mobile vertical-text">
+        <img class="vertical-logo" src="img/logopanza.png"/>
+    </div>
+
+    <!-- <div class="masthead">
+
+    </div> -->
+    <div class="jumbotron main">
+        <nav>
+            <ul class="nav nav-justified">
+                <!-- <li><a href="#">¿Qué hacemos?</a></li> -->
+                <li><a href="#">Menú del día</a></li>
+                <li><a href="#">Comunidad</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="main-text">
+            <h1>Panza llena, corazón contento.</h1>
+            <p class="lead">Descubre las mejores experiencias gastronómicas de la ciudad <a class="btn btn-lg btn-success purple-btn main-btn" href="http://eepurl.com/b4g0Tn" role="button">Probar Beta</a></p>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="what-we-do">
+        <h2>En beta privado</h2>
+        <p class="lead we-do">
+            <a href="http://eepurl.com/b4g0Tn">Déjanos tu correo para saber cuando lancemos</a>
+        </p>
+    </div>
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Ir hasta arriba</a></p>
+        <p>© 2016 Panza. · <a href="#">Privacidad</a> · <a href="#">Términos y Condiciones</a></p>
+      </footer>
+
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('.by-square').affix({
+          offset: {
+            top: -10,
+            bottom: function () {
+              return (this.bottom = $('.footer').outerHeight(true))
+            }
+          }
+        })
+        $(window).scroll(function(){
+           var height = $(this).scrollTop();
+           if (height > 225){
+             $(".vertical-logo").css("background-color", "transparent");
+           }
+           else{
+              $(".vertical-logo").css("background-color", "white");
+           }
+        });
+    </script>
+
+  </body>
+</html>
