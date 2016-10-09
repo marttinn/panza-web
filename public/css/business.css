@@ -1,0 +1,145 @@
+body{
+    font-family: 'Karla', sans-serif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #FAFAFA;
+}
+
+.logo {
+    height: 60px;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
+
+.choro{
+    text-align: center
+}
+
+.striper{
+    text-align: center
+}
+
+.striper h2 {
+    margin-top: 35px;
+    font-size: 1.6em;
+}
+
+.striper h2.emoji {
+    font-size: 2.5em;
+}
+
+.striper > .welcome{
+    margin-top: 35px;
+}
+
+.cabecera{
+    background-color: white;
+    margin: 0;
+    padding: 15px;
+}
+
+.nuevo-negocio{
+    font-size: 1.1em;
+}
+
+.el-form{
+    text-align: left;
+    margin-top: 30px;
+}
+
+.nuevo-negocio .row{
+    margin-top: 20px;
+}
+
+.el-form .nuevo-negocio .terminar{
+    margin-top: 55px;
+    margin-bottom: 35px;
+}
+
+.terminar button{
+    background-color: #9D54F4;
+    border-radius: 2;
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.62857143;
+    height: 40px;
+}
+
+.terminar button:hover{
+    color: #fbfbfb;
+    background-color: #a166e6;
+}
+.terminar button:active{
+    color: #f2f2f2;
+    background-color: #7c39cc;
+}
+.terminar button:visited{
+    color: #f1f1f1;
+    background-color: #af55f1;
+}
+.terminar button:focus{
+    color: white;
+    background-color: #af55f1;
+}
+
+a.boton{
+    background-color: #9D54F4;
+    border-radius: 2;
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.62857143;
+    height: 40px;
+}
+
+a.boton:hover{
+    color: #fbfbfb;
+    background-color: #6b2bb7;
+}
+a.boton:active{
+    color: #f2f2f2;
+    background-color: #7c39cc;
+}
+a.boton:visited{
+    color: #f1f1f1;
+    background-color: #af55f1;
+}
+a.boton:focus{
+    color: white;
+    background-color: #af55f1;
+}
+
+.el-form .nuevo-negocio ::-webkit-input-placeholder {
+   color: #C4C4C4;
+}
+
+.el-form .nuevo-negocio :-moz-placeholder { /* Firefox 18- */
+   color: #C4C4C4;
+}
+
+.el-form .nuevo-negocio ::-moz-placeholder {  /* Firefox 19+ */
+   color: #C4C4C4;
+}
+
+.el-form .nuevo-negocio :-ms-input-placeholder {
+   color: #C4C4C4;
+}
+
+.el-form .nuevo-negocio .form-control:focus {
+    border-color: #9D54F4;
+}
+.stripe-y-ya{
+    margin-top: 45px;
+}
+
+label.interno{
+    margin-top: 10px;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .el-form .nuevo-negocio label.interno{
+        margin-top: 0px;
+    }
+}

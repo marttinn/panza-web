@@ -1,0 +1,30 @@
+<!-- views/pages/business.ejs -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <% include ../partials/head %>
+        <link rel="stylesheet" href="css/business.css">
+    </head>
+    <body>
+        <section class="cabecera">
+            <img src="img/logopanzah.png" class="logo"/>
+        </section>
+
+        <section class="striper container">
+
+            <div class="welcome">
+                <h1>¡Bienvenido!</h1>
+                <h2>Sólo necesitamos tu cuenta de Stripe para pagarte</h2>
+                <h2 class="emoji">💸</h2>
+            </div>
+
+            <div class="stripe-y-ya">
+                <a href="/stripe-listo" class="stripe-connect"><span>Conectar Stripe</span></a>
+                <small>(Sí no tienes puedes crearla aquí mismo)</small>
+            </div>
+
+        </section>
+
+    </body>
+</html>

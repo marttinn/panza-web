@@ -17,11 +17,23 @@ app.set('view engine', 'ejs');
 
 // Rutas en EJS
 app.get('/', function (req, res) {
-    res.redirect('/business');
+    res.redirect('/negocios');
 });
 
-app.get('/business', function(req, res){
+app.get('/negocios', function(req, res){
     res.render('pages/business', { title: 'Hey,', message: 'Hello Cooks!'});
+});
+
+app.get('/sync-stripe', function(req, res){
+    res.render('pages/sync-stripe');
+});
+
+app.get('/stripe-listo', function(req, res){
+    res.render('pages/stripe-listo');
+});
+
+app.get('/stripe-error', function(req, res){
+    res.render('pages/stripe-error');
 });
 
 app.get('/clients', function(req, res){
