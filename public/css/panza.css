@@ -154,6 +154,17 @@ li > a {
     background-color: white;
 }
 
+.orange{
+    color: #fc9b82;
+}
+
+.blue{
+    color: #0062ff;
+}
+
+.purple{
+    background-color: #8c6df2;
+}
 
 footer{
     padding-bottom: 60px;

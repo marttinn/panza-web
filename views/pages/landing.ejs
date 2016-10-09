@@ -1,91 +1,77 @@
+<!-- views/pages/landing.ejs -->
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<html lang="es">
+    <head>
+        <% include ../partials/head %>
+        <link rel="stylesheet" href="css/panza.css">
+    </head>
+    <body>
+
+        <div class="container-fluid">
+
+            <section class="hasta-arriba">
+                <img src="img/logopanza.png"/>
+
+                <nav>
+                    <ul>
+                        <li>¿Qué hacemos?</li>
+                        <li>Productos destacados</li>
+                        <li>Nuestra Comunidad</li>
+                        <li>Contacto</li>
+                    </ul>
+                </nav>
+
+                <div class="hero">
+                    <h1>Panza llena, corazón contento</h1>
+                    <small>Descubre las mejores experiencias culinarias de tu ciudad</small>
+                    <a href="#">Probar Beta</a>
+                </div>
+            </section>
+
+            <section class="que-hacemos">
+                <h2>¿Qué hacemos?</h2>
+                <p>Reunimos a pequeños productores, proyectos gastronómicos emergentes y restaurantes con las propuestas culinarias
+                más interesantes de la ciudad</p>
+
+                <h3>Así funciona</h3>
+
+                <p>Seleccionamos productos y platillos increíbles</p>
+
+                <p>Compras en línea</p>
+
+                <p>Te entregamos o los recoges en locación</p>
+
+            </section>
+
+            <section class="newsletter">
+                <p>Lo mejor para tu panza en tu inbox</p>
+                <input type="text" name="mail" placeholder="tu@mail.com">
+                <button>Suscríbete</button>
+            </section>
+
+            <section class="nuestra-comunidad">
+                <h2>Nuestra comunidad</h2>
+                <p>Productores locales, empresas comprometidas con el bienestar</p>
+
+                <img src="nuti.png">
+                <img src="nuti.png">
+                <img src="nuti.png">
+                <img src="nuti.png">
+
+            </section>
+
+            <section class="unirse">
+                <p>¿Quieres vender con nosotros?</p>
+                <button>Escríbenos</button>
+            </section>
 
 
+            <% include ../partials/footer %>
 
-    <title>Panza | La mejor comida de la ciudad</title>
-    <!-- Latest compiled and minified CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/panza.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arvo|Playfair+Display" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="by-square not-mobile vertical-text">
-        <img class="vertical-logo" src="img/logopanza.png"/>
-    </div>
 
-    <!-- <div class="masthead">
-
-    </div> -->
-    <div class="jumbotron main">
-        <nav>
-            <ul class="nav nav-justified">
-                <!-- <li><a href="#">¿Qué hacemos?</a></li> -->
-                <li><a href="#">Menú del día</a></li>
-                <li><a href="#">Comunidad</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="main-text">
-            <h1>Panza llena, corazón contento.</h1>
-            <p class="lead">Descubre las mejores experiencias gastronómicas de la ciudad <a class="btn btn-lg btn-success purple-btn main-btn" href="http://eepurl.com/b4g0Tn" role="button">Probar Beta</a></p>
         </div>
-    </div>
-
-    <div class="overlay"></div>
-
-    <div class="what-we-do">
-        <h2>En beta privado</h2>
-        <p class="lead we-do">
-            <a href="http://eepurl.com/b4g0Tn">Déjanos tu correo para saber cuando lancemos</a>
-        </p>
-    </div>
 
 
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Ir hasta arriba</a></p>
-        <p>© 2016 Panza. · <a href="#">Privacidad</a> · <a href="#">Términos y Condiciones</a></p>
-      </footer>
-
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        $('.by-square').affix({
-          offset: {
-            top: -10,
-            bottom: function () {
-              return (this.bottom = $('.footer').outerHeight(true))
-            }
-          }
-        })
-        $(window).scroll(function(){
-           var height = $(this).scrollTop();
-           if (height > 225){
-             $(".vertical-logo").css("background-color", "transparent");
-           }
-           else{
-              $(".vertical-logo").css("background-color", "white");
-           }
-        });
-    </script>
-
-  </body>
+    </body>
 </html>
