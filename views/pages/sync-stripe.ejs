@@ -14,14 +14,14 @@
         <section class="striper container">
 
             <div class="welcome">
-                <h1>¡Bienvenido!</h1>
+                <h1>¡Bienvenido, <%= seller.businessName %>!</h1>
                 <h2>Sólo necesitamos tu cuenta de Stripe para pagarte</h2>
                 <h2 class="emoji">💸</h2>
             </div>
 
             <div class="stripe-y-ya">
-                <a href="/stripe-listo" class="stripe-connect"><span>Conectar Stripe</span></a>
-                <small>(Sí no tienes puedes crearla aquí mismo)</small>
+                <a href="<%= authURL %>?response_type=code&client_id=<%= clientID %>&scope=read_write&state=<%= sellerForState %>" class="stripe-connect"><span>Conectar Stripe</span></a>
+                <br><small>(Sí no tienes puedes crearla aquí mismo)</small>
             </div>
 
         </section>

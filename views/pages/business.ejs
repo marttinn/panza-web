@@ -5,6 +5,7 @@
     <head>
         <% include ../partials/head %>
         <link rel="stylesheet" href="css/business.css">
+
     </head>
     <body>
         <section class="cabecera">
@@ -19,7 +20,7 @@
             </div>
 
             <div class="el-form">
-                <form class="nuevo-negocio">
+                <form action="/crear-negocio" method="post" class="nuevo-negocio">
                     <div class="row">
 
                        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -40,7 +41,7 @@
 
                         <div class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
                             <label for="telefono">Teléfono local</label><br>
-                            <input type="text" name="telefono" class="form-control" id="telefono" placeholder="ej. 555-2234">
+                            <input type="text" name="telefono" class="form-control" id="telefono" placeholder="ej. 555-231-2234">
                         </div>
 
                         <div class="col-md-5  col-lg-4">
@@ -53,12 +54,12 @@
 
                         <div class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
                             <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control" id="nombre" placeholder="ej. martin@panza.co">
+                            <input type="email" name="email" class="form-control" id="nombre" placeholder="ej. martin@panza.co">
                         </div>
 
                         <div class="col-md-5  col-lg-4">
                             <label class="interno" for="password">Password</label>
-                            <input type="text" name="password" class="form-control" id="password" placeholder="ej. panz4!R0cks">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="ej. panz4!R0cks">
                         </div>
                     </div>
 
@@ -66,7 +67,7 @@
 
                         <div class="col-md-6 col-md-offset-1 col-lg-5 col-lg-offset-2">
                             <label for="direccion">Dirección</label>
-                            <input type="text" name="direccion" class="form-control" id="direccion" placeholder="ej. Paseo de la Reforma 333">
+                            <input type="text" onFocus="geolocate()" name="direccion" class="form-control" id="direccion" placeholder="ej. Paseo de la Reforma 333">
                         </div>
 
                         <div class="col-md-4  col-lg-3 interno">
@@ -79,8 +80,8 @@
                     <div class="row terminar">
 
                         <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-                            <!-- <button type="submit" class="btn btn-default form-control">Terminar</button> -->
-                            <a href="/sync-stripe" class="btn btn-default form-control boton">Terminar</a>
+                            <button type="submit" class="btn btn-default form-control">Terminar</button>
+                            <!-- <a href="/sync-stripe" class="btn btn-default form-control boton">Terminar</a> -->
                         </div>
 
                     </div>
@@ -92,5 +93,71 @@
 
         </section>
 
+    <script>
+        var autocomplete;
+
+        function initAutocomplete() {
+          // Create the autocomplete object, restricting the search to geographical
+          // location types.
+          autocomplete = new google.maps.places.Autocomplete(
+              /** @type {!HTMLInputElement} */(document.getElementById('direccion')),
+              {types: ['geocode'], componentRestrictions: {country: "mx"}});
+
+        }
+
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+            var geolocation = {
+              lat: 19.39068,
+              lng: -99.2836983
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: 45000
+            });
+            autocomplete.setBounds(circle.getBounds());
+        }
+
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4YWziTZqqaRJDeY0fpCzdFowWGLb6a8k&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('#telefono').mask('000-000-0000');
+            $('#celular').mask('00-0000-0000');
+
+            $("#telefono").on("blur", function() {
+                var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+
+                if( last.length == 3 ) {
+                    var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+                    var lastfour = move + last;
+
+                    var first = $(this).val().substr( 0, 9 );
+
+                    $(this).val( first + '-' + lastfour );
+                }
+            });
+
+            $("#celular").on("blur", function() {
+                var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+
+                if( last.length == 3 ) {
+                    var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+                    var lastfour = move + last;
+
+                    var first = $(this).val().substr( 0, 9 );
+
+                    $(this).val( first + '-' + lastfour );
+                }
+            });
+
+        });
+    </script>
     </body>
 </html>
