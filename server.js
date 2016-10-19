@@ -50,7 +50,6 @@ app.get('/stripe-connection', function(req, res){
                 client_id: process.env.CLIENT_ID,
                 code: code,
                 client_secret: process.env.API_KEY
-
             }
         }, function(err, re, body){
 
@@ -110,7 +109,7 @@ app.post('/crear-negocio', function(req, res){
         cellPhone: seller.celular,
         email: seller.email,
         password: seller.password,
-        address: seller.address,
+        address: seller.direccion,
         interior: seller.interior,
         clientId: slug(seller.negocio) +"-"+ shortid.generate()
     }, function (err, createdSeller) {
